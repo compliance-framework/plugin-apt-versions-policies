@@ -3,10 +3,9 @@ package compliance_framework.apt_versions.apt_versions
 import future.keywords.in
 
 # Helper function to find the package by name
-get_package(name, packages) = p if {
-    some i
-    packages[i].Package == name
-    p = packages[i]
+get_package(name, packages) = result if {
+    result := packages[_]
+    result.Package == name
 }
 
 violation [{
