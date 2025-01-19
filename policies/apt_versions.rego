@@ -5,7 +5,7 @@ violation [{
     "remarks": "Upgrade wget",
     "remarks": "Upgrade wget to 1.21.0, it is currently"
 }] if {
-    "1" == "2"
+    "2" == "2"
 }
 
 #import future.keywords.in
