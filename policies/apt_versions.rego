@@ -5,9 +5,9 @@ import future.keywords.in
 violation [{
     "title": "wget version",
     "remarks": "Upgrade wget",
-    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|                                                                                                                                                     input: %v", [input.wget, input.wget.Version, input])
+    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|                                                                                                                                                     input: %v", [input.wget.Version, input])
 }] if {
-    input.wget.Version != "1.21.0"
+    input.wget.Version != "1.22.1"
 }
 
 ## Helper function to find the package by name
