@@ -7,7 +7,8 @@ violation [{
     "remarks": "Upgrade wget",
     "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|                                                                                                                                                     input: %v", [input.wget.Version, input])
 }] if {
-    "2.21.0" in input.wget.Version
+    #input.wget.Version != "1.21.0"
+    semver.compare(input.wget.Version, "1.21.0") == -1
 }
 
 ## Helper function to find the package by name
