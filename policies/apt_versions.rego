@@ -1,14 +1,12 @@
 package compliance_framework.apt_versions.apt_versions
 
-import future.keywords.in
-
 violation [{
     "title": "wget version",
     "remarks": "Upgrade wget",
     "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|                                                                                                                                                     input: %v", [input.wget.Version, input])
 }] if {
     #input.wget.Version != "1.21.0"
-    semver.compare(input.wget.Version, "1.21.0") == -1
+    semver.compare(input.wget, "1.21.0") == -1
 }
 
 ## Helper function to find the package by name
