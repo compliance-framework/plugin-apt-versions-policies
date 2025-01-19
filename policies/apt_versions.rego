@@ -7,7 +7,7 @@ violation [{
     "remarks": "Upgrade wget",
     "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|                                                                                                                                                     input: %v", [input.wget.Version, input])
 }] if {
-    input.wget.Version != "1.22.1"
+    input.wget.Version != "1.22.0"
 }
 
 ## Helper function to find the package by name
