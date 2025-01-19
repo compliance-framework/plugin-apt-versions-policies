@@ -1,14 +1,15 @@
 package compliance_framework.apt_versions.apt_versions
 
+import future.keywords.in
+
 violation [{
     "title": "wget version",
     "remarks": "Upgrade wget",
-    "remarks": sprintf("Upgrade wget to 1.22.0, it is currently wget: %v        version: %s                                                                                                                                                     input: %v", [input.wget, input.wget.Version, input])
-}] if {
+    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|                                                                                                                                                     input: %v", [input.wget, input.wget.Version, input])
+}] {
     input.wget.Version != "1.22.0"
 }
 
-#import future.keywords.in
 ## Helper function to find the package by name
 #get_package(name, packages) = result if {
 #    result := packages[_]
