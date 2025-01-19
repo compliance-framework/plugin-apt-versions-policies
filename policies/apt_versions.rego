@@ -3,9 +3,9 @@ package compliance_framework.apt_versions.apt_versions
 violation [{
     "title": "wget version",
     "remarks": "Upgrade wget",
-    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently %v", [input])
+    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently 10:53 %v", [input.wget])
 }] if {
-    "1" == "2"
+    input.wget.Version == "1.21.0"
 }
 
 #import future.keywords.in
