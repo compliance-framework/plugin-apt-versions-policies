@@ -3,7 +3,7 @@ package compliance_framework.apt_versions.apt_versions
 violation [{
     "title": "wget version",
     "remarks": "Upgrade wget",
-    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|, input: |%v| compare: |%i|", [input.wget, input, semver.compare(input.wget, "1.21.0")])
+    "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|, input: |%v| compare: |%d|", [input.wget, input, semver.compare(input.wget, "1.21.0")])
 }] if {
     semver.compare(input.wget, "1.21.0") == -1
 }
