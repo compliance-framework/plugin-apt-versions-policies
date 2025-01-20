@@ -5,5 +5,5 @@ violation [{
     "remarks": "Upgrade wget",
     "remarks": sprintf("Upgrade wget to 1.21.0, it is currently version: |%s|, input: |%v| compare: ", [input.wget, input, semver.compare(input.wget, "1.21.0")])
 }] if {
-    semver.compare("1.21.0", input.wget) == -1
+    semver.compare(input.wget, "1.21.0") == -1
 }
