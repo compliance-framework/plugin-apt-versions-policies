@@ -34,7 +34,7 @@ violation[{
 	"id": "wget_version",
     "remarks": sprintf("WGET version is currently |%s|", [input.wget])
 }] if {
-    semver.compare(input.wget, "1.20.3") == -1
+    semver.compare(input.wget, data.wget_version) == -1
 }
 
 title := "Wget version is safe"
