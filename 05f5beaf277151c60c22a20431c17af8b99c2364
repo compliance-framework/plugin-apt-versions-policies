@@ -1,0 +1,5 @@
+lisa-design:
+- Regal unresolved-reference on data.wget_version (3 sites) is silenced with line-scoped `# regal ignore:unresolved-reference` plus a comment, not a repo .regal/config.yaml: a repo config would replace the shared base config wholesale in ci-policies.yml, and moving the value into Rego would change how data.json overrides it.
+- Test ignores are trailing comments on the `with` lines: a comment line between `with` clauses makes opa fmt 1.14.1 re-indent the clause, so fmt --list fails.
+- equals-over-count warnings in the tests are left: the spec forbids rewriting test assertions for style warnings.
+- push.yaml and push.yml were identical and only called test.yml; all three were deleted.
