@@ -1,0 +1,5 @@
+lisa-design:
+- Manifest seeded at 0.5.1 = releases/latest (v0.5.1, final; commit 7f0a55d is an ancestor of main), so no bootstrap-sha.
+- No version.txt added by hand: release-please adds it in the first release PR (simple release type).
+- Callers copied verbatim from mock-plugin-policies-1 with pins moved to v1.5.2; identical to the reviewed plugin-file-attestation-policies#4.
+- README untouched: it documents local opa test/build, not releasing.
