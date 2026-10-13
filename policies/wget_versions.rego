@@ -7,14 +7,12 @@ risk_templates := [{
 	"likelihood_hint": "medium",
 	"impact_hint": "medium",
 	"violation_ids": ["wget_version"],
-	"threat_refs": [
-		{
-			"system": "https://cwe.mitre.org",
-			"external_id": "CWE-1104",
-			"title": "Use of Unmaintained Third Party Components",
-			"url": "https://cwe.mitre.org/data/definitions/1104.html"
-		}
-	],
+	"threat_refs": [{
+		"system": "https://cwe.mitre.org",
+		"external_id": "CWE-1104",
+		"title": "Use of Unmaintained Third Party Components",
+		"url": "https://cwe.mitre.org/data/definitions/1104.html",
+	}],
 	"remediation": {
 		"title": "Patch wget and enforce package currency",
 		"description": "Upgrade wget to a vendor-supported, security-patched release and maintain documented patch governance, with approved compensating controls when immediate upgrade is not feasible.",
@@ -29,17 +27,13 @@ risk_templates := [{
 	},
 }]
 
-
-violation[{
-	"id": "wget_version",
-    "remarks": sprintf("WGET version is currently |%s|", [input.wget])
-}] if {
-    semver.compare(input.wget, data.wget_version) == -1
+violation[{"id": "wget_version", "remarks": sprintf("WGET version is currently |%s|", [input.wget])}] if {
+	# data.wget_version comes from policies/data.json, which Regal doesn't read.
+	# regal ignore:unresolved-reference
+	semver.compare(input.wget, data.wget_version) == -1
 }
 
 title := "Wget version is safe"
 description := sprintf("Wget versions should be 1.20.3 or higher to avoid vulnerabilities. Current version |%s|", [input.wget])
 
-labels := {
-    "package_name": "wget"
-}
+labels := {"package_name": "wget"}
