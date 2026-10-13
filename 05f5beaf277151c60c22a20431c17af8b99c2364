@@ -3,3 +3,6 @@ lisa-design:
 - Test ignores are trailing comments on the `with` lines: a comment line between `with` clauses makes opa fmt 1.14.1 re-indent the clause, so fmt --list fails.
 - equals-over-count warnings in the tests are left: the spec forbids rewriting test assertions for style warnings.
 - push.yaml and push.yml were identical and only called test.yml; all three were deleted.
+
+lisa-selfreview:
+- pass 1 (core, rego-policy): no findings on the diff; verdict approve. Pre-existing, untouched: no METADATA (REGO-META-001), package name vs file stem (REGO-PKG-001), no at-boundary 1.20.3 test (REGO-TEST-002), description hard-codes 1.20.3 while data.json holds it (REGO-DATA-002), README doesn't list the policy or data key (REGO-README-001).
